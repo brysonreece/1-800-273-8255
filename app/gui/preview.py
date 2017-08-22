@@ -52,10 +52,10 @@ def render(url, data):
     box = canvas.create_rectangle(x0, y0, x1, y1, width=5, outline="red")
     text = canvas.create_text(((x0 - x1) / 2) + x1, y1 + 15, text=suspectedEmotion, fill="red")
 
-  infoPanel = ScrolledText(window, undo=True)
-  infoPanel['font'] = ('consolas', '12')
-  infoPanel.pack(expand="true", fill='both')
-  infoPanel.insert('insert', data) 
+  #infoPanel = ScrolledText(window, undo=True)
+  #infoPanel['font'] = ('consolas', '12')
+  #infoPanel.pack(expand="true", fill='both')
+  #infoPanel.insert('insert', data) 
   
   window.geometry(str(int(scaledWidth)) + "x" + str(int(scaledHeight)))
   window.mainloop() 

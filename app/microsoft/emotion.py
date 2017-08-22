@@ -1,5 +1,6 @@
-import httplib, json, urllib, base64
+import httplib, json, urllib
 import app.gui.preview as preview
+import app.instagram.get as instagram
 
 def analyze(key, region, url):
     headers = {
@@ -22,9 +23,10 @@ def analyze(key, region, url):
         conn.request("POST", "/emotion/v1.0/recognize?%s" % params, body, headers)
         response = conn.getresponse()
         data = response.read()
-	json_data = json.loads(data)
-        pretty_json = json.dumps(json_data, indent=4, sort_keys=True)
-	preview.render(url, pretty_json)
+        if (data != "[]"):
+          json_data = json.loads(data)
+          pretty_json = json.dumps(json_data, indent=4, sort_keys=True)
+	  preview.render(url, pretty_json)
         conn.close()
     except Exception as e:
         print("[Error] {0}".format(e.message))
