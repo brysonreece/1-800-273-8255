@@ -1,4 +1,4 @@
-# 1-800-273-8255
+# EmPy
 Analyzes Emotional States of Instagram Posts
 
 
